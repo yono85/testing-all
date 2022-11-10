@@ -16,7 +16,7 @@ try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtpmail.jakarta.go.id';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->SMTPAuth   = false;                                   //Enable SMTP authentication
     $mail->Username   = 'noreply-sims@jakarta.go.id';                     //SMTP username
     $mail->Password   = 'Sims@Dki2022!';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
@@ -25,14 +25,6 @@ try {
     //Recipients
     $mail->setFrom('noreply-sims@jakarta.go.id', 'Testing');
     $mail->addAddress('yonocahyono85@gmail.com', 'Yono Cahyono');     //Add a recipient
-    // $mail->addAddress('ellen@example.com');               //Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
-
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
