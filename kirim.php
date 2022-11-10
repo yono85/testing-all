@@ -39,8 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 else{
-    $data =[
-        'message'       =>  'Please use method POST'
-    ];
-    dd($data);
+   
+    echo "Please use method POST";
+    
 }
