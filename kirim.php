@@ -1,19 +1,19 @@
 <?php
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\SMTP;
-// use PHPMailer\PHPMailer\Exception;
-
-// // Load Composer's autoloader
-// require 'vendor/autoload.php';
-
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/PHPMailer/src/Exception.php';
-require 'vendor/PHPMailer/src/PHPMailer.php';
-require 'vendor/PHPMailer/src/SMTP.php';
+// Load Composer's autoloader
+require 'vendor/autoload.php';
+
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+
+// require 'vendor/PHPMailer/src/Exception.php';
+// require 'vendor/PHPMailer/src/PHPMailer.php';
+// require 'vendor/PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 try{
