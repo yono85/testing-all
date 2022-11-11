@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 'allow_self_signed' =>  false
             ]
         ]);
-        $mail->smtpClose();                                
+        // $mail->smtpClose();                                
     
         //Recipients
         $mail->setFrom('noreply-sims@jakarta.go.id', 'Testing');
