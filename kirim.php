@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
         $mail->isSMTP();                                            
         $mail->Host       = 'smtpmail.jakarta.go.id';    //10.15.39.87'; //              
-        $mail->SMTPAuth   = true;                                   
+        $mail->SMTPAuth   = false;                                   
         $mail->Username   = 'noreply-sims@jakarta.go.id';                     
         $mail->Password   = ''; //'Sims@Dki2022!';                              
         $mail->SMTPSecure = 'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
