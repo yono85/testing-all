@@ -15,17 +15,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
         $mail->isSMTP();                                            
-        $mail->Host       = 'zmtablast.jakarta.go.id';    //10.15.39.87'; //              
+        $mail->Host       = 'smtpmail.jakarta.go.id';    //10.15.39.87'; //              
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = 'noreply-sims@jakarta.go.id';                     
         $mail->Password   = 'Sims@Dki2022!';                              
-        $mail->SMTPSecure = 'tls'; //'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
-        $mail->Port       = 25;
+        $mail->SMTPSecure = ''; //'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
+        $mail->Port       = 587;
         $mail->smtpConnect([
-            'tls'       =>  [
+            'ssl'       =>  [
                 'verify_peer'   =>  false,
                 'verify_peer_name'  =>  false,
-                'allow_self_signed' =>  true
+                'allow_self_signed' =>  false
             ]
         ]);
         $mail->smtpClose();                                
