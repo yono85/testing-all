@@ -16,11 +16,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
         $mail->isSMTP();                                            
         $mail->Host       = 'smtpmail.jakarta.go.id';    //10.15.39.87'; //              
-        $mail->SMTPAuth   = false;                                   
+        $mail->SMTPAuth   = true;                                   
         $mail->Username   = 'noreply-sims@jakarta.go.id';                     
-        $mail->Password   = ''; //'Sims@Dki2022!';                              
-        $mail->SMTPSecure = 'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
-        $mail->Port       = 25;                                    
+        $mail->Password   = 'Sims@Dki2022!';                              
+        $mail->SMTPSecure = ''; //'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
+        $mail->Port       = 587;
+        $mail->smtpConnect([
+            'ssl'       =>  [
+                'verify_peer'   =>  false,
+                'verify_peer_name'  =>  false,
+                'allow_self_signed' =>  true
+            ]
+        ]);
+        $mail->smtpClose();                                
     
         //Recipients
         $mail->setFrom('noreply-sims@jakarta.go.id', 'Testing');
@@ -30,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Here is the subject';
         $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     
         $mail->send();
         echo 'Message has been sent';
