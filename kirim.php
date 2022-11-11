@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
         $mail->isSMTP();                                            
-        $mail->Host       = 'smtpmail.jakarta.go.id';    //10.15.39.87'; //              
+        $mail->Host       = 'zmtablast.jakarta.go.id';    //10.15.39.87'; //              
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = 'noreply-sims@jakarta.go.id';                     
         $mail->Password   = 'Sims@Dki2022!';                              
