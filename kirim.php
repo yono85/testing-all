@@ -13,14 +13,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtpmail.jakarta.go.id';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = false;                                   //Enable SMTP authentication
-        $mail->Username   = 'noreply-sims@jakarta.go.id';                     //SMTP username
-        $mail->Password   = 'Sims@Dki2022!';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
+        $mail->isSMTP();                                            
+        $mail->Host       = '10.15.39.87'; //'smtpmail.jakarta.go.id';                  
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'noreply-sims@jakarta.go.id';                     
+        $mail->Password   = 'Sims@Dki2022!';                              
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
+        $mail->Port       = 587;                                    
     
         //Recipients
         $mail->setFrom('noreply-sims@jakarta.go.id', 'Testing');
