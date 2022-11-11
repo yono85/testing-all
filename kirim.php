@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $mail->SMTPAuth   = true;                                   
         $mail->Username   = 'noreply-sims@jakarta.go.id';                     
         $mail->Password   = 'Sims@Dki2022!';                              
-        $mail->SMTPSecure = ''; //'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
+        $mail->SMTPSecure = 'tls'; //'tls'; //PHPMailer::ENCRYPTION_STARTTLS; //'tls'; //PHPMailer::ENCRYPTION_SMTPS; //            
         $mail->Port       = 587;
         $mail->smtpConnect([
             'ssl'       =>  [
